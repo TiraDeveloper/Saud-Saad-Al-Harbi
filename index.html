@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة سعود سعد الحربي وأبناؤه</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0A1711',    /* أخضر داكن جداً (الخلفية الأساسية) */
+                            green: '#18452B',   /* أخضر متوسط (مساعد) */
+                            gold: '#D4AF37',    /* ذهبي مائل للأصفر (Accent) */
+                            goldLight: '#E5C665' /* ذهبي فاتح لتأثيرات الـ Hover */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 h-[2000px] font-sans antialiased text-gray-800">
+
+    <!-- ===== Screen Loader ===== -->
+
+
+<style>
+    /* منع التمرير أثناء ظهور شاشة التحميل */
+    body.loading {
+        overflow: hidden;
+    }
+
+    * {
+        scroll-behavior: smooth;
+    }
+
+    /* 1. حركة الوميض الضوئي (تأثير الشاحنة السريعة) */
+    .animate-whoosh {
+        transform: translateX(100vw) scaleX(1);
+        opacity: 0;
+        animation: whooshPass 1.2s cubic-bezier(0.1, 0.7, 0.1, 1) 0.3s forwards;
+    }
+
+    /* 2. تأثير ظهور وتوهج الشعار والكتلة بالكامل */
+    .animate-logo-reveal {
+        opacity: 0;
+        transform: scale(0.95);
+        animation: logoGlowReveal 1.5s ease-out forwards;
+    }
+
+    /* 3. حركة خروج شاشة التحميل (الانزلاق للأعلى) */
+    .preloader-exit {
+        transform: translateY(-100%);
+        transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.8s ease-in;
+        opacity: 0;
+    }
+
+    /* Keyframes */
+    @keyframes whooshPass {
+        0% { transform: translateX(150vw) scaleX(1); opacity: 0; filter: blur(10px); }
+        20% { opacity: 1; }
+        50% { transform: translateX(0) scaleX(6); filter: blur(25px) brightness(1.5); }
+        80% { opacity: 1; }
+        100% { transform: translateX(-150vw) scaleX(1); opacity: 0; filter: blur(10px); }
+    }
+
+    @keyframes logoGlowReveal {
+        0% { opacity: 0; filter: brightness(0.2); transform: scale(0.95); }
+        30% { opacity: 0.2; filter: brightness(0.5); transform: scale(0.98); }
+        60% { opacity: 1; filter: brightness(2) drop-shadow(0 0 30px rgba(212,175,55,0.8)); transform: scale(1.02); }
+        100% { opacity: 1; filter: brightness(1) drop-shadow(0 0 0px rgba(212,175,55,0)); transform: scale(1); }
+    }
+</style>
+
+<div id="cinematic-preloader" class="fixed inset-0 z-[9999] bg-[#0A1711] flex items-center justify-center overflow-hidden will-change-transform">
+    
+    <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0">
+        <div class="animate-whoosh w-full max-w-4xl h-32 md:h-48 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-0 mix-blend-screen"></div>
+        <div class="animate-whoosh w-full max-w-5xl h-40 md:h-56 absolute bg-gradient-to-r from-transparent via-[#18452B] to-transparent opacity-0 mix-blend-color-dodge delay-75"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center justify-center animate-logo-reveal w-full px-6">
+        
+        <img src="التحميل.png" 
+             alt="شعار شركة سعود سعد الحربي وأبناؤه" 
+             class="h-20 md:h-28 lg:h-36 w-auto max-w-[250px] md:max-w-[350px] object-contain mb-6 drop-shadow-2xl"
+             style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+        
+        <h1 class="text-white font-bold text-xl md:text-2xl lg:text-3xl tracking-wide text-center">
+            شركة سعود سعد الحربي وأبناؤه
+        </h1>
+        
+        <p class="text-[#D4AF37] mt-3 text-xs md:text-sm tracking-[0.2em] font-medium opacity-80 uppercase text-center">
+            قوة تنطلق قبل أن تراها
+        </p>
+    </div>
+
+</div>
+
+<script>
+    document.body.classList.add('loading');
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const preloader = document.getElementById('cinematic-preloader');
+        
+        setTimeout(() => {
+            preloader.classList.add('preloader-exit');
+            
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                document.body.classList.remove('loading');
+            }, 800); 
+
+        }, 2200); 
+    });
+</script>
+
+
+
+    <!-- ===== Header ===== -->
+
+<header id="main-header" class="fixed top-0 inset-x-0 w-full z-50 transition-all duration-500 ease-out bg-transparent border-b border-transparent">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-12">
+            <div id="header-wrapper" class="flex items-center justify-between h-20 lg:h-24 transition-all duration-500">
+                
+                <a href="index.html" class="flex items-center gap-3 lg:gap-4 flex-shrink-0 group">
+                    <img src="التحميل.png" alt="شعار الشركة" class="h-10 lg:h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://via.placeholder.com/150x50/18452B/D4AF37?text=LOGO'">
+                    <div class="flex flex-col">
+                        <span class="text-white font-bold text-sm lg:text-base tracking-wide group-hover:text-[#D4AF37] transition-colors duration-300">شركة سعود سعد الحربي</span>
+                        <span class="text-gray-400 text-[0.6rem] lg:text-xs font-medium tracking-[0.1em] uppercase">للنقل الثقيل</span>
+                    </div>
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#" class="text-[#D4AF37] font-bold text-sm tracking-wide transition-colors">الرئيسية</a>
+                    <a href="#about-us" class="text-gray-300 hover:text-white font-medium text-sm tracking-wide transition-colors">من نحن</a>
+                    <a href="#operational-journey" class="text-gray-300 hover:text-white font-medium text-sm tracking-wide transition-colors">خدماتنا</a>
+                    <a href="#projects-map-section" class="text-gray-300 hover:text-white font-medium text-sm tracking-wide transition-colors">مشاريعنا</a>
+                    <a href="#mission-launch-section" class="text-gray-300 hover:text-white font-medium text-sm tracking-wide transition-colors">تواصل معنا</a>
+                </nav>
+
+                <div class="flex items-center gap-3 lg:gap-5 flex-shrink-0">
+                    
+                    <a href="index-en.html" class="hidden sm:flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-600/50 text-gray-300 hover:text-[#0A1711] hover:bg-[#D4AF37] hover:border-[#D4AF37] transition-all duration-300 ease-out hover:scale-105 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] group" title="English Version">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        </svg>
+                        <span class="font-bold text-xs tracking-wider mt-0.5">EN</span>
+                    </a>
+
+                    <a href="S-Documents.zip" download class="hidden lg:inline-flex items-center justify-center px-6 py-2.5 bg-[#D4AF37] text-[#0A1711] font-bold text-sm rounded-md transition-all duration-300 hover:bg-white hover:shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:-translate-y-0.5">
+                        تحميل ملفات الشركة
+                    </a>
+
+                    <button id="menu-btn" class="lg:hidden text-gray-200 hover:text-[#D4AF37] focus:outline-none transition-colors p-1">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-[80%] max-w-sm bg-[#0A1711] border-l border-[#18452B]/50 z-[70] transform translate-x-full transition-transform duration-400 ease-out flex flex-col shadow-2xl">
+        
+        <div class="flex items-center justify-between p-6 border-b border-white/10">
+            <span class="text-white font-bold text-lg">القائمة</span>
+            <button id="close-btn" class="text-gray-400 hover:text-[#D4AF37] transition-colors p-1">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6">
+            <a href="#" class="text-[#D4AF37] font-bold text-lg">الرئيسية</a>
+            <a href="#about-us" class="text-gray-300 hover:text-white font-medium text-lg transition-colors">من نحن</a>
+            <a href="#operational-journey" class="text-gray-300 hover:text-white font-medium text-lg transition-colors">خدماتنا</a>
+            <a href="#projects-map-section" class="text-gray-300 hover:text-white font-medium text-lg transition-colors">مشاريعنا</a>
+            <a href="#mission-launch-section" class="text-gray-300 hover:text-white font-medium text-lg transition-colors">مشاريعنا</a>
+            
+            <div class="w-full h-[1px] bg-white/10 my-2"></div>
+            
+            <a href="index-en.html" class="flex items-center gap-3 text-gray-300 hover:text-[#D4AF37] transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                <span class="font-bold text-base tracking-wide">English Version</span>
+            </a>
+        </div>
+
+        <div class="p-6 border-t border-white/10">
+            <a href="#" class="flex items-center justify-center w-full py-3.5 bg-[#D4AF37] text-[#0A1711] font-bold rounded-md hover:bg-white transition-colors">
+                اطلب عرض سعر
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. منطق الهيدر عند التمرير (Sticky & Blur)
+            const header = document.getElementById('main-header');
+            const headerWrapper = document.getElementById('header-wrapper');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    header.classList.add('bg-[#0A1711]/90', 'backdrop-blur-md', 'border-b', 'border-[#D4AF37]/20', 'shadow-lg');
+                    header.classList.remove('bg-transparent', 'border-transparent');
+                    headerWrapper.classList.replace('lg:h-24', 'lg:h-20');
+                } else {
+                    header.classList.remove('bg-[#0A1711]/90', 'backdrop-blur-md', 'border-b', 'border-[#D4AF37]/20', 'shadow-lg');
+                    header.classList.add('bg-transparent', 'border-transparent');
+                    headerWrapper.classList.replace('lg:h-20', 'lg:h-24');
+                }
+            });
+
+            // 2. منطق قائمة الجوال (Mobile Menu)
+            const menuBtn = document.getElementById('menu-btn');
+            const closeBtn = document.getElementById('close-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('mobile-overlay');
+
+            const toggleMenu = (isOpen) => {
+                if (isOpen) {
+                    mobileMenu.classList.remove('translate-x-full'); // يزيل الإزاحة لتدخل القائمة
+                    overlay.classList.remove('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = 'hidden'; // يمنع تمرير الصفحة بالخلفية
+                } else {
+                    mobileMenu.classList.add('translate-x-full'); // يعيد الإزاحة لليمين
+                    overlay.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            menuBtn.addEventListener('click', () => toggleMenu(true));
+            closeBtn.addEventListener('click', () => toggleMenu(false));
+            overlay.addEventListener('click', () => toggleMenu(false));
+        });
+    </script>
+
+
+<!-- ===== Hero ===== -->
+
+
+<section id="hero-section" class="relative min-h-screen flex items-center justify-start overflow-hidden pt-24 lg:pt-0 bg-brand-dark selection:bg-brand-gold selection:text-brand-dark">
+    
+    <div id="hero-bg" class="absolute inset-0 z-0 w-full h-full transform origin-bottom animate-truck-move">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=2075&auto=format&fit=crop" 
+             alt="طريق سريع وشاحنات" 
+             class="w-full h-full object-cover object-bottom" />
+    </div>
+
+    <div class="absolute inset-0 z-0 bg-gradient-to-l from-brand-dark via-brand-dark/80 to-transparent"></div>
+    <div class="absolute inset-0 z-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/30"></div>
+
+    <div class="absolute top-[60%] left-[30%] w-[40vw] h-[40vw] max-w-[600px] max-h-[600px] bg-brand-gold/20 rounded-full blur-[100px] z-0 animate-glow-pulse pointer-events-none transform -translate-x-1/2 -translate-y-1/2"></div>
+
+    <div class="container mx-auto px-6 lg:px-12 relative z-10 w-full">
+        <div class="max-w-3xl flex flex-col items-start text-right">
+            
+            <div class="hero-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-100 flex items-center gap-3 mb-6">
+                <span class="w-8 h-0.5 bg-brand-gold"></span>
+                <span class="text-brand-gold font-bold text-sm md:text-base tracking-wider uppercase">الطريق الذي لا يتوقف</span>
+            </div>
+
+            <h1 class="hero-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-300 text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.2] lg:leading-[1.15] mb-6 drop-shadow-lg">
+                ننقل مشاريعك نحو <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold to-yellow-200">المستقبل</span> 
+                بثقة وثبات
+            </h1>
+
+            <p class="hero-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-500 text-gray-300 text-base md:text-lg lg:text-xl font-medium leading-relaxed max-w-2xl mb-10 drop-shadow-md border-r-4 border-brand-green pr-4">
+                حلول نقل ثقيل متكاملة تدعم كبرى المشاريع في المملكة بأعلى معايير الأمان، الدقة، والالتزام اللوجستي التام.
+            </p>
+
+            <div class="hero-element opacity-0 translate-y-8 transition-all duration-1000 ease-out delay-700 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                
+                <a href="#mission-launch-section" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-brand-gold text-brand-dark font-black text-lg rounded shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 ease-out relative overflow-hidden group">
+                    <span class="relative z-10">اطلب عرض سعر</span>
+                    <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:animate-[shine_1s_ease-in-out] z-0"></div>
+                </a>
+
+                <a href="#about-us" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold text-lg rounded hover:border-brand-gold hover:text-brand-gold hover:bg-brand-gold/5 transition-all duration-300 ease-out backdrop-blur-sm">
+                    تعرف علينا
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+        <span class="text-white text-xs tracking-widest uppercase font-medium">اكتشف المزيد</span>
+        <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center pt-2">
+            <div class="w-1 h-2 bg-brand-gold rounded-full animate-bounce"></div>
+        </div>
+    </div>
+
+</section>
+
+<style>
+    @keyframes shine {
+        100% { transform: skewX(-12deg) translateX(200%); }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Fade-in Entrance Animation ---
+        const heroElements = document.querySelectorAll('.hero-element');
+        setTimeout(() => {
+            heroElements.forEach(el => {
+                el.classList.remove('opacity-0', 'translate-y-8');
+                el.classList.add('opacity-100', 'translate-y-0');
+            });
+        }, 100);
+
+        // --- Smooth Parallax Effect on Scroll ---
+        const heroBg = document.getElementById('hero-bg');
+        const heroSection = document.getElementById('hero-section');
+        
+        window.addEventListener('scroll', () => {
+            // نتحقق من وجود العناصر لتجنب أي أخطاء JS في صفحات أخرى
+            if (!heroBg || !heroSection) return;
+            
+            const scrolled = window.scrollY;
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            
+            // تطبيق التحريك فقط طالما أن الـ Hero ظاهر في الشاشة لتحسين الأداء
+            if (scrolled < heroBottom) {
+                heroBg.style.transform = `translateY(${scrolled * 0.4}px)`;
+            }
+        });
+    });
+</script>
+
+
+<!-- ===== About Us ===== -->
+
+<section id="about-us" class="relative py-24 lg:py-32 bg-[#0A1711] overflow-hidden">
+    
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20 pointer-events-none">
+        <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-gradient-to-br from-[#18452B] to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-gradient-to-tr from-[#D4AF37]/10 to-transparent rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-12 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-24 reveal-element opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
+            <div class="flex items-center justify-center gap-4 mb-4">
+                <span class="w-12 h-[2px] bg-[#D4AF37] rounded-full shadow-[0_0_8px_rgba(212,175,55,0.5)]"></span>
+                <span class="text-[#D4AF37] font-bold text-sm md:text-base tracking-widest uppercase">من الأساس إلى القمة</span>
+                <span class="w-12 h-[2px] bg-[#D4AF37] rounded-full shadow-[0_0_8px_rgba(212,175,55,0.5)]"></span>
+            </div>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+                من نحن
+            </h2>
+            <p class="text-gray-300 text-base md:text-lg font-medium leading-relaxed">
+                مسيرة تمتد لعقود في بناء شراكات لوجستية موثوقة، ننقل خلالها طموحاتكم من مجرد رؤية على الورق إلى واقع ملموس على أرض أضخم المشاريع.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
+            
+            <div class="hidden md:block absolute top-12 right-1/6 left-1/6 h-[1px] bg-gradient-to-r from-transparent via-[#18452B] to-transparent z-0"></div>
+
+            <div class="reveal-element opacity-0 translate-y-12 transition-all duration-[800ms] ease-out delay-[100ms] relative z-10">
+                <div class="group h-full bg-gradient-to-b from-[#0e2118] to-[#0A1711] border border-[#18452B]/40 rounded-xl p-8 lg:p-10 hover:border-[#D4AF37]/50 hover:shadow-[0_10px_40px_rgba(212,175,55,0.08)] hover:scale-[1.02] transition-all duration-500 flex flex-col items-center text-center">
+                    
+                    <div class="w-20 h-20 mb-8 rounded-full bg-[#0A1711] border border-[#18452B] group-hover:border-[#D4AF37] flex items-center justify-center transition-colors duration-500 relative shadow-inner">
+                        <div class="absolute inset-0 bg-[#D4AF37]/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <svg class="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-4 group-hover:text-[#D4AF37] transition-colors duration-300">
+                        الأساس الراسخ
+                    </h3>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        بدأنا برؤية واضحة والتزام صارم بتقديم أعلى معايير الجودة في النقل الثقيل، لنرسي قواعد صلبة بُنيت عليها ثقة شركائنا على مر السنين.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal-element opacity-0 translate-y-12 transition-all duration-[800ms] ease-out delay-[300ms] relative z-10">
+                <div class="group h-full bg-gradient-to-b from-[#0e2118] to-[#0A1711] border border-[#18452B]/40 rounded-xl p-8 lg:p-10 hover:border-[#D4AF37]/50 hover:shadow-[0_10px_40px_rgba(212,175,55,0.08)] hover:scale-[1.02] transition-all duration-500 flex flex-col items-center text-center">
+                    
+                    <div class="w-20 h-20 mb-8 rounded-full bg-[#0A1711] border border-[#18452B] group-hover:border-[#D4AF37] flex items-center justify-center transition-colors duration-500 relative shadow-inner">
+                        <div class="absolute inset-0 bg-[#D4AF37]/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <svg class="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-4 group-hover:text-[#D4AF37] transition-colors duration-300">
+                        النمو المستمر
+                    </h3>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        توسع أسطولنا وتطورت قدراتنا التشغيلية لنواكب أضخم المشاريع الوطنية، معتمدين على أحدث التقنيات وأكفأ الكوادر البشرية.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal-element opacity-0 translate-y-12 transition-all duration-[800ms] ease-out delay-[500ms] relative z-10">
+                <div class="group h-full bg-gradient-to-b from-[#0e2118] to-[#0A1711] border border-[#18452B]/40 rounded-xl p-8 lg:p-10 hover:border-[#D4AF37]/50 hover:shadow-[0_10px_40px_rgba(212,175,55,0.08)] hover:scale-[1.02] transition-all duration-500 flex flex-col items-center text-center">
+                    
+                    <div class="w-20 h-20 mb-8 rounded-full bg-[#0A1711] border border-[#18452B] group-hover:border-[#D4AF37] flex items-center justify-center transition-colors duration-500 relative shadow-inner">
+                        <div class="absolute inset-0 bg-[#D4AF37]/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <svg class="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-4 group-hover:text-[#D4AF37] transition-colors duration-300">
+                        القوة اللوجستية
+                    </h3>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        نقف اليوم كقوة رائدة، نضمن تنفيذ أصعب التحديات والمشاريع العملاقة بأمان تام، دقة في المواعيد، وكفاءة لا تُضاهى.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // تحديد جميع العناصر التي ستحصل على تأثير الظهور
+        const revealElements = document.querySelectorAll('.reveal-element');
+
+        // إعدادات الـ Observer (يبدأ التأثير عندما يظهر 15% من العنصر في الشاشة)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const elementObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // إزالة كلاسات الإخفاء والإزاحة
+                    entry.target.classList.remove('opacity-0', 'translate-y-12');
+                    // إضافة كلاسات الظهور
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    
+                    // إيقاف المراقبة بعد الظهور الأول (ليعمل مرة واحدة فقط بشكل احترافي)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // تفعيل المراقبة على كل عنصر
+        revealElements.forEach(el => {
+            elementObserver.observe(el);
+        });
+    });
+</script>
+
+
+<!-- ===== Services ===== -->
+
+
+<style>
+    /* خلفية صناعية خفيفة جداً لتعزيز العمق */
+    .industrial-dots {
+        background-image: radial-gradient(rgba(24, 69, 43, 0.15) 2px, transparent 2px);
+        background-size: 30px 30px;
+    }
+    
+    /* إعدادات حركة البطاقات (نعومة فائقة بدون Bounce) */
+    .journey-card {
+        transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        will-change: transform, opacity;
+    }
+
+    /* حركة السهم الإرشادي (Subtle Bob) */
+    .animate-scroll-hint {
+        animation: scrollHint 2.5s ease-in-out infinite;
+    }
+    @keyframes scrollHint {
+        0%, 100% { transform: translateY(0); opacity: 0.5; }
+        50% { transform: translateY(8px); opacity: 1; }
+    }
+</style>
+
+<section id="operational-journey" class="relative h-[400vh] bg-[#030705] industrial-dots font-sans">
+    
+    <div class="sticky top-0 w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+        
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] max-w-[900px] max-h-[900px] bg-[#18452B]/15 blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+        <div class="absolute top-16 lg:top-24 left-0 w-full text-center z-20 px-4">
+            <div class="flex items-center justify-center gap-3 mb-3">
+                <span class="w-6 h-[1px] bg-[#D4AF37]/70"></span>
+                <span class="text-[#D4AF37] font-medium text-xs lg:text-sm tracking-[0.2em] uppercase opacity-90">رحلة العملية التشغيلية</span>
+                <span class="w-6 h-[1px] bg-[#D4AF37]/70"></span>
+            </div>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-wide drop-shadow-lg">
+                خدماتنا
+            </h2>
+        </div>
+
+        <div class="relative w-[90%] md:w-[600px] lg:w-[850px] h-[400px] lg:h-[450px] z-10 mt-12 lg:mt-20">
+            
+            <div class="journey-card absolute inset-0 bg-[#0A1711]/80 backdrop-blur-md border border-[#D4AF37]/10 rounded-2xl p-8 lg:p-16 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] flex flex-col justify-center overflow-hidden opacity-0 translate-y-8 pointer-events-none">
+                
+                <span class="absolute top-[-10px] left-2 lg:left-6 text-[150px] lg:text-[200px] font-black text-[#D4AF37] opacity-[0.03] pointer-events-none leading-none select-none">01</span>
+                
+                <div class="absolute top-0 right-0 h-full w-1 bg-gradient-to-b from-[#D4AF37]/60 to-transparent"></div>
+                <div class="absolute bottom-8 left-8 flex gap-1.5 opacity-60">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#18452B]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#18452B]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+                </div>
+
+                <div class="relative z-10">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-4 tracking-wide">التخطيط والهندسة اللوجستية</h3>
+                    <div class="w-12 h-[2px] bg-[#D4AF37]/80 mb-6 rounded-full"></div>
+                    <p class="text-gray-300 text-sm lg:text-[1.05rem] leading-relaxed lg:leading-loose max-w-2xl font-medium opacity-90">
+                        تبدأ الرحلة بدراسة هندسية دقيقة لمسارات النقل (Route Survey) للحمولات الشاذة والمعدات الثقيلة، واستخراج كافة التصاريح الأمنية والمرورية لضمان خلو المسار من أي عوائق، مع تخطيط شامل لإدارة المخاطر.
+                    </p>
+                </div>
+            </div>
+
+            <div class="journey-card absolute inset-0 bg-[#0A1711]/80 backdrop-blur-md border border-[#D4AF37]/10 rounded-2xl p-8 lg:p-16 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] flex flex-col justify-center overflow-hidden opacity-0 translate-y-8 pointer-events-none">
+                <span class="absolute top-[-10px] left-2 lg:left-6 text-[150px] lg:text-[200px] font-black text-[#D4AF37] opacity-[0.03] pointer-events-none leading-none select-none">02</span>
+                
+                <div class="absolute top-0 right-0 h-full w-1 bg-gradient-to-b from-[#D4AF37]/60 to-transparent"></div>
+                <div class="absolute bottom-8 left-8 flex gap-1.5 opacity-60">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#18452B]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#18452B]"></span>
+                </div>
+
+                <div class="relative z-10">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-4 tracking-wide">تجهيز الأسطول والمعدات</h3>
+                    <div class="w-12 h-[2px] bg-[#D4AF37]/80 mb-6 rounded-full"></div>
+                    <p class="text-gray-300 text-sm lg:text-[1.05rem] leading-relaxed lg:leading-loose max-w-2xl font-medium opacity-90">
+                        إعداد القاطرات والمقطورات الهيدروليكية (Lowbeds) وصهاريج نقل البترول المصممة وفق معايير أرامكو الصارمة. تخضع جميع المعدات لفحوصات ميكانيكية دقيقة لتأكيد جاهزيتها التامة للمهمة.
+                    </p>
+                </div>
+            </div>
+
+            <div class="journey-card absolute inset-0 bg-[#0A1711]/80 backdrop-blur-md border border-[#D4AF37]/10 rounded-2xl p-8 lg:p-16 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] flex flex-col justify-center overflow-hidden opacity-0 translate-y-8 pointer-events-none">
+                <span class="absolute top-[-10px] left-2 lg:left-6 text-[150px] lg:text-[200px] font-black text-[#D4AF37] opacity-[0.03] pointer-events-none leading-none select-none">03</span>
+                
+                <div class="absolute top-0 right-0 h-full w-1 bg-gradient-to-b from-[#D4AF37]/60 to-transparent"></div>
+                <div class="absolute bottom-8 left-8 flex gap-1.5 opacity-60">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#18452B]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#18452B]"></span>
+                </div>
+
+                <div class="relative z-10">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-4 tracking-wide">النقل والتوجيه الميداني</h3>
+                    <div class="w-12 h-[2px] bg-[#D4AF37]/80 mb-6 rounded-full"></div>
+                    <p class="text-gray-300 text-sm lg:text-[1.05rem] leading-relaxed lg:leading-loose max-w-2xl font-medium opacity-90">
+                        انطلاق القوافل تحت مراقبة حية عبر غرف التحكم المتقدمة (GPS Tracking). يتم توجيه حركة النقل برفقة فرق الدعم اللوجستي والمرافقات الأمنية لضمان التدفق الآمن عبر الطرق السريعة والوعرة.
+                    </p>
+                </div>
+            </div>
+
+            <div class="journey-card absolute inset-0 bg-[#0A1711]/80 backdrop-blur-md border border-[#D4AF37]/10 rounded-2xl p-8 lg:p-16 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] flex flex-col justify-center overflow-hidden opacity-0 translate-y-8 pointer-events-none">
+                <span class="absolute top-[-10px] left-2 lg:left-6 text-[150px] lg:text-[200px] font-black text-[#D4AF37] opacity-[0.03] pointer-events-none leading-none select-none">04</span>
+                
+                <div class="absolute top-0 right-0 h-full w-1 bg-gradient-to-b from-[#D4AF37]/60 to-transparent"></div>
+                <div class="absolute bottom-8 left-8 flex gap-1.5 opacity-60">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span><span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+                </div>
+
+                <div class="relative z-10">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-4 tracking-wide">التسليم والمناولة الآمنة</h3>
+                    <div class="w-12 h-[2px] bg-[#D4AF37]/80 mb-6 rounded-full"></div>
+                    <p class="text-gray-300 text-sm lg:text-[1.05rem] leading-relaxed lg:leading-loose max-w-2xl font-medium opacity-90">
+                        الوصول إلى الموقع وإدارة عمليات الإنزال والتفريغ باستخدام رافعات وكرينات متخصصة. نضمن تسليم المعدات الثقيلة وشحنات الطاقة ضمن الجدول الزمني المحدد بدقة، لضمان استمرارية مشاريعكم.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="scroll-indicator" class="absolute bottom-10 lg:bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-700 ease-in-out opacity-100 z-30">
+            <span class="text-[#D4AF37] text-xs lg:text-sm font-medium tracking-wide opacity-80">اسحب للأسفل لاكتشاف مراحل العملية</span>
+            <svg class="w-5 h-5 text-[#D4AF37] animate-scroll-hint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const section = document.getElementById('operational-journey');
+        const cards = section.querySelectorAll('.journey-card');
+        const scrollIndicator = document.getElementById('scroll-indicator');
+        const totalCards = cards.length;
+
+        const updateCardsOnScroll = () => {
+            const rect = section.getBoundingClientRect();
+            const scrollableDistance = rect.height - window.innerHeight;
+            
+            let progress = -rect.top / scrollableDistance;
+            progress = Math.max(0, Math.min(1, progress));
+
+            const activeIndex = Math.floor(progress * (totalCards - 0.001));
+
+            // إخفاء مؤشر التمرير إذا تخطينا البطاقة الأولى
+            if (activeIndex > 0) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+                scrollIndicator.style.transform = 'translate(-50%, 20px)';
+            } else {
+                scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.transform = 'translate(-50%, 0)';
+            }
+
+            // تطبيق الحركات الناعمة (Soft Translate) بدلاً من الحركة الكبيرة السابقة
+            cards.forEach((card, index) => {
+                if (index < activeIndex) {
+                    // تم تجاوزها (ترتفع قليلاً لأعلى بـ -20px وتختفي)
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(-20px) scale(0.98)';
+                    card.style.pointerEvents = 'none';
+                } else if (index === activeIndex) {
+                    // النشطة (تستقر في المنتصف)
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0) scale(1)';
+                    card.style.pointerEvents = 'auto';
+                } else {
+                    // لم نصل لها (تنتظر بالأسفل بـ 20px)
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px) scale(0.98)';
+                    card.style.pointerEvents = 'none';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', () => {
+            requestAnimationFrame(updateCardsOnScroll);
+        });
+
+        updateCardsOnScroll();
+    });
+</script>
+
+
+<!-- ===== Projects ===== -->
+
+
+<style>
+    /* خلفية شبكية لشاشة الرادار/الخريطة */
+    .map-grid-bg {
+        background-image: 
+            linear-gradient(rgba(24, 69, 43, 0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(24, 69, 43, 0.15) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    /* حركة التدفق داخل خطوط الأنابيب (الطاقة/البترول) */
+    .flow-x {
+        background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent);
+        animation: flowAnimationX 2s infinite linear;
+    }
+    .flow-y {
+        background: linear-gradient(180deg, transparent, rgba(212,175,55,0.8), transparent);
+        animation: flowAnimationY 2s infinite linear;
+    }
+
+    @keyframes flowAnimationX {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+    @keyframes flowAnimationY {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+    }
+
+    /* كلاسات التحكم في الأنيميشن عند الـ Scroll */
+    .map-line-x { transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); transform: scaleX(0); }
+    .map-line-y { transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); transform: scaleY(0); }
+    
+    .is-active .map-line-x { transform: scaleX(1); }
+    .is-active .map-line-y { transform: scaleY(1); }
+</style>
+
+<section id="projects-map-section" class="relative py-24 lg:py-32 bg-[#040A07] overflow-hidden border-t border-[#18452B]/20 font-sans" dir="rtl">
+    
+    <div class="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-[#18452B]/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal-fade opacity-0 translate-y-8 transition-all duration-[800ms] ease-out">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <span class="w-8 h-[1px] bg-[#D4AF37]/80"></span>
+                <span class="text-[#D4AF37] font-medium text-xs lg:text-sm tracking-[0.2em] uppercase">خريطة العمليات اللوجستية</span>
+                <span class="w-8 h-[1px] bg-[#D4AF37]/80"></span>
+            </div>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
+                مشاريعنا التشغيلية
+            </h2>
+            <p class="text-gray-400 text-sm md:text-base lg:text-[1.05rem] leading-relaxed opacity-90">
+                شبكة من الإنجازات الميدانية تمتد عبر خارطة المملكة. استكشف كيف ندير تدفق المعدات والبترول في أعقد المسارات الصناعية.
+            </p>
+        </div>
+
+        <div class="hidden lg:grid grid-cols-12 gap-8 items-center">
+            
+            <div id="interactive-map" class="col-span-8 relative w-full h-[550px] bg-[#0A1711]/60 backdrop-blur-sm border border-[#18452B]/40 rounded-3xl map-grid-bg shadow-2xl overflow-hidden p-8">
+                
+                <span class="absolute top-4 left-4 text-[#18452B] text-xs font-mono">LAT: 26.2361 / LNG: 50.0393</span>
+                <span class="absolute bottom-4 right-4 text-[#18452B] text-xs font-mono">SYS. ONLINE</span>
+
+                <div class="absolute top-[40%] right-[15%] w-[35%] h-[2px] bg-[#18452B] origin-right map-line-x delay-[200ms]">
+                    <div class="w-full h-full overflow-hidden relative"><div class="absolute inset-0 w-[50px] h-full flow-x"></div></div>
+                </div>
+                <div class="absolute top-[40%] right-[50%] w-[2px] h-[30%] bg-[#18452B] origin-top map-line-y delay-[400ms]">
+                    <div class="w-full h-full overflow-hidden relative"><div class="absolute inset-0 w-full h-[50px] flow-y"></div></div>
+                </div>
+                <div class="absolute top-[70%] right-[50%] w-[35%] h-[2px] bg-[#18452B] origin-right map-line-x delay-[600ms]">
+                    <div class="w-full h-full overflow-hidden relative"><div class="absolute inset-0 w-[50px] h-full flow-x"></div></div>
+                </div>
+                <div class="absolute top-[25%] right-[85%] w-[2px] h-[45%] bg-[#18452B] origin-bottom map-line-y delay-[800ms]">
+                    <div class="w-full h-full overflow-hidden relative"><div class="absolute inset-0 w-full h-[50px] flow-y animate-reverse"></div></div>
+                </div>
+
+                <div class="map-node absolute top-[40%] right-[15%] transform translate-x-1/2 -translate-y-1/2 cursor-pointer group opacity-0 scale-50 transition-all duration-700 ease-out delay-[200ms]" data-project="1">
+                    <div class="w-6 h-6 rounded-full bg-[#0A1711] border-[3px] border-[#18452B] group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_25px_rgba(212,175,55,1)] group-hover:scale-125 transition-all duration-300 relative z-10 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 bg-[#D4AF37] rounded-full group-hover:bg-white transition-colors"></div>
+                    </div>
+                    <span class="absolute top-8 left-1/2 transform -translate-x-1/2 text-gray-400 text-sm font-bold whitespace-nowrap group-hover:text-white transition-colors">مشروع محطة الغزلان</span>
+                </div>
+
+                <div class="map-node absolute top-[40%] right-[50%] transform translate-x-1/2 -translate-y-1/2 cursor-pointer group opacity-0 scale-50 transition-all duration-700 ease-out delay-[400ms]" data-project="2">
+                    <div class="w-6 h-6 rounded-full bg-[#0A1711] border-[3px] border-[#18452B] group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_25px_rgba(212,175,55,1)] group-hover:scale-125 transition-all duration-300 relative z-10 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 bg-[#D4AF37] rounded-full group-hover:bg-white"></div>
+                    </div>
+                    <span class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 text-sm font-bold whitespace-nowrap group-hover:text-white transition-colors">حقل الشيبة النفطي</span>
+                </div>
+
+                <div class="map-node absolute top-[70%] right-[50%] transform translate-x-1/2 -translate-y-1/2 cursor-pointer group opacity-0 scale-50 transition-all duration-700 ease-out delay-[600ms]" data-project="3">
+                    <div class="w-6 h-6 rounded-full bg-[#0A1711] border-[3px] border-[#18452B] group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_25px_rgba(212,175,55,1)] group-hover:scale-125 transition-all duration-300 relative z-10 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 bg-[#D4AF37] rounded-full group-hover:bg-white"></div>
+                    </div>
+                    <span class="absolute top-8 left-1/2 transform -translate-x-1/2 text-gray-400 text-sm font-bold whitespace-nowrap group-hover:text-white transition-colors">مصفاة الجبيل</span>
+                </div>
+
+                <div class="map-node absolute top-[70%] right-[85%] transform translate-x-1/2 -translate-y-1/2 cursor-pointer group opacity-0 scale-50 transition-all duration-700 ease-out delay-[800ms]" data-project="4">
+                    <div class="w-6 h-6 rounded-full bg-[#0A1711] border-[3px] border-[#18452B] group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_25px_rgba(212,175,55,1)] group-hover:scale-125 transition-all duration-300 relative z-10 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 bg-[#D4AF37] rounded-full group-hover:bg-white"></div>
+                    </div>
+                    <span class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 text-sm font-bold whitespace-nowrap group-hover:text-white transition-colors">توسعة أرامكو</span>
+                </div>
+
+                <div class="map-node absolute top-[25%] right-[85%] transform translate-x-1/2 -translate-y-1/2 cursor-pointer group opacity-0 scale-50 transition-all duration-700 ease-out delay-[1000ms]" data-project="5">
+                    <div class="w-6 h-6 rounded-full bg-[#0A1711] border-[3px] border-[#18452B] group-hover:bg-[#D4AF37] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_25px_rgba(212,175,55,1)] group-hover:scale-125 transition-all duration-300 relative z-10 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 bg-[#D4AF37] rounded-full group-hover:bg-white"></div>
+                    </div>
+                    <span class="absolute top-8 left-1/2 transform -translate-x-1/2 text-gray-400 text-sm font-bold whitespace-nowrap group-hover:text-white transition-colors">ميناء الملك عبدالعزيز</span>
+                </div>
+
+            </div>
+
+            <div class="col-span-4 h-full">
+                <div id="project-details-panel" class="w-full h-full bg-gradient-to-b from-[#0e2118] to-[#0A1711] border border-[#18452B]/40 rounded-3xl p-8 flex flex-col justify-center shadow-2xl transition-all duration-500 ease-out relative overflow-hidden">
+                    
+                    <div class="absolute top-0 right-0 w-2 h-full bg-[#D4AF37]/80"></div>
+
+                    <div id="panel-content" class="transition-opacity duration-300 opacity-100">
+                        <span id="p-tag" class="inline-block px-3 py-1 bg-[#18452B]/30 border border-[#18452B] text-[#D4AF37] text-xs font-bold rounded mb-6">نقل معدات ثقيلة</span>
+                        <h3 id="p-title" class="text-2xl font-black text-white mb-4 leading-tight">مشروع محطة الغزلان للطاقة</h3>
+                        <p id="p-desc" class="text-gray-400 text-sm leading-relaxed mb-8">
+                            عملية لوجستية معقدة شملت نقل توربينات غازية ضخمة بوزن 120 طن باستخدام مقطورات هيدروليكية منخفضة، مع تأمين مسار النقل والتصاريح.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 border-t border-[#18452B]/30 pt-6">
+                            <div>
+                                <span class="block text-gray-500 text-xs uppercase mb-1">حجم الحمولة</span>
+                                <span id="p-stat1" class="block text-white font-bold text-lg">120 طن</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-500 text-xs uppercase mb-1">المدة الزمنية</span>
+                                <span id="p-stat2" class="block text-white font-bold text-lg">7 أيام</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="panel-idle" class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-[#0e2118] transition-opacity duration-300 opacity-0 pointer-events-none hidden">
+                        <svg class="w-12 h-12 text-[#18452B] mb-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                        <span class="text-gray-400 font-medium">مرر الماوس فوق أي محطة في الخريطة لعرض تفاصيل العملية التشغيلية.</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 lg:hidden">
+            
+            <div class="reveal-fade opacity-0 translate-y-8 transition-all duration-[700ms] ease-out bg-gradient-to-br from-[#0e2118] to-[#0A1711] border border-[#18452B]/40 p-6 rounded-2xl shadow-xl">
+                <span class="inline-block px-3 py-1 bg-[#18452B]/30 text-[#D4AF37] text-xs font-bold rounded mb-4">نقل معدات ثقيلة</span>
+                <h3 class="text-xl font-bold text-white mb-2">مشروع محطة الغزلان</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">نقل توربينات غازية ضخمة بوزن 120 طن باستخدام مقطورات هيدروليكية منخفضة.</p>
+                <div class="flex gap-4 border-t border-[#18452B]/30 pt-4">
+                    <span class="text-white text-sm font-bold">120 طن</span>
+                    <span class="text-gray-500 text-sm">|</span>
+                    <span class="text-white text-sm font-bold">7 أيام</span>
+                </div>
+            </div>
+
+            <div class="reveal-fade opacity-0 translate-y-8 transition-all duration-[700ms] ease-out delay-[100ms] bg-gradient-to-br from-[#0e2118] to-[#0A1711] border border-[#18452B]/40 p-6 rounded-2xl shadow-xl">
+                <span class="inline-block px-3 py-1 bg-[#18452B]/30 text-[#D4AF37] text-xs font-bold rounded mb-4">دعم لوجستي</span>
+                <h3 class="text-xl font-bold text-white mb-2">حقل الشيبة النفطي</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">إمداد مستمر لأنابيب الحفر ومعدات التنقيب في قلب الربع الخالي ضمن ظروف مناخية قاسية.</p>
+                <div class="flex gap-4 border-t border-[#18452B]/30 pt-4">
+                    <span class="text-white text-sm font-bold">رحلات يومية</span>
+                    <span class="text-gray-500 text-sm">|</span>
+                    <span class="text-white text-sm font-bold">عقد سنوي</span>
+                </div>
+            </div>
+
+            <div class="reveal-fade opacity-0 translate-y-8 transition-all duration-[700ms] ease-out delay-[200ms] bg-gradient-to-br from-[#0e2118] to-[#0A1711] border border-[#18452B]/40 p-6 rounded-2xl shadow-xl">
+                <span class="inline-block px-3 py-1 bg-[#18452B]/30 text-[#D4AF37] text-xs font-bold rounded mb-4">نقل مشتقات بترولية</span>
+                <h3 class="text-xl font-bold text-white mb-2">توسعة مصفاة الجبيل</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">تخصيص أسطول صهاريج لنقل المواد الكيميائية والوقود بمعدل تدفق عالي لدعم خطوط الإنتاج.</p>
+                <div class="flex gap-4 border-t border-[#18452B]/30 pt-4">
+                    <span class="text-white text-sm font-bold">مواد خطرة</span>
+                    <span class="text-gray-500 text-sm">|</span>
+                    <span class="text-white text-sm font-bold">أمان 100%</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        // 1. بيانات المشاريع للخريطة التفاعلية
+        const projectData = {
+            '1': { tag: 'نقل معدات ثقيلة', title: 'مشروع محطة الغزلان للطاقة', desc: 'عملية لوجستية معقدة شملت نقل توربينات غازية ضخمة بوزن 120 طن باستخدام مقطورات هيدروليكية منخفضة، مع تأمين مسار النقل والتصاريح.', stat1: '120 طن', stat2: '7 أيام' },
+            '2': { tag: 'دعم لوجستي', title: 'حقل الشيبة النفطي', desc: 'تحدي لوجستي في قلب الربع الخالي. تم توفير إمداد مستمر لأنابيب الحفر ومعدات التنقيب عبر طرق رملية وعرة بأعلى معايير السلامة.', stat1: 'رحلات يومية', stat2: 'عقد مستمر' },
+            '3': { tag: 'نقل مشتقات بترولية', title: 'توسعة مصفاة الجبيل', desc: 'تخصيص أسطول صهاريج متقدم لنقل المواد الكيميائية والوقود بمعدل تدفق عالي لدعم خطوط الإنتاج الجديدة في المصفاة.', stat1: 'مواد خطرة (Hazmat)', stat2: 'أمان 100%' },
+            '4': { tag: 'نقل وتفريغ', title: 'توسعة مرافق أرامكو', desc: 'نقل قواعد خرسانية وأبراج تبريد ضخمة. تم الاعتماد على خطط هندسية صارمة وتوفير رافعات بقدرات عالية لتنزيل المعدات في الموقع.', stat1: 'قواعد خرسانية', stat2: '14 يوم' },
+            '5': { tag: 'تخليص ومناولة', title: 'ميناء الملك عبدالعزيز', desc: 'استقبال وتخليص شحنات صناعية واردة من الخارج، وتحميلها مباشرة من السفن إلى أسطول النقل وتوجيهها للمشاريع المستفيدة.', stat1: 'تخليص فوري', stat2: 'أسطول كامل' }
+        };
+
+        // عناصر لوحة التفاصيل
+        const panelContent = document.getElementById('panel-content');
+        const pTag = document.getElementById('p-tag');
+        const pTitle = document.getElementById('p-title');
+        const pDesc = document.getElementById('p-desc');
+        const pStat1 = document.getElementById('p-stat1');
+        const pStat2 = document.getElementById('p-stat2');
+        
+        const nodes = document.querySelectorAll('.map-node');
+        const panelCard = document.getElementById('project-details-panel');
+
+        // 2. تحديث لوحة التفاصيل عند التفاعل مع الخريطة
+        nodes.forEach(node => {
+            node.addEventListener('mouseenter', function() {
+                const id = this.getAttribute('data-project');
+                const data = projectData[id];
+                
+                // تأثير نبض خفيف للبطاقة
+                panelCard.style.transform = 'scale(0.98)';
+                panelContent.style.opacity = '0';
+                
+                setTimeout(() => {
+                    pTag.textContent = data.tag;
+                    pTitle.textContent = data.title;
+                    pDesc.textContent = data.desc;
+                    pStat1.textContent = data.stat1;
+                    pStat2.textContent = data.stat2;
+                    
+                    panelCard.style.transform = 'scale(1.02)';
+                    panelContent.style.opacity = '1';
+                    
+                    setTimeout(() => { panelCard.style.transform = 'scale(1)'; }, 200);
+                }, 300); // ينتظر الاختفاء قبل تغيير المحتوى
+            });
+        });
+
+        // 3. Intersection Observer لتشغيل الأنيميشن عند النزول للقسم
+        const mapSection = document.getElementById('projects-map-section');
+        const revealElements = document.querySelectorAll('#projects-map-section .reveal-fade');
+        const mapContainer = document.getElementById('interactive-map');
+
+        const mapObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // ظهور النصوص والبطاقات العادية (الجوال والترويسة)
+                    revealElements.forEach(el => {
+                        el.classList.remove('opacity-0', 'translate-y-8');
+                        el.classList.add('opacity-100', 'translate-y-0');
+                    });
+
+                    // تشغيل شبكة الخطوط والنقاط (للديسكتوب)
+                    if (mapContainer) {
+                        mapContainer.classList.add('is-active');
+                        nodes.forEach(n => {
+                            n.classList.remove('opacity-0', 'scale-50');
+                            n.classList.add('opacity-100', 'scale-100');
+                        });
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        mapObserver.observe(mapSection);
+    });
+</script>
+
+
+
+<!-- ===== Contact ===== -->
+
+<style>
+  .ops-grid-bg {
+    background-image:
+      linear-gradient(rgba(24, 69, 43, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(24, 69, 43, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #050B08 inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  textarea::-webkit-scrollbar { width: 6px; }
+  textarea::-webkit-scrollbar-track { background: #030705; }
+  textarea::-webkit-scrollbar-thumb { background: #18452B; border-radius: 10px; }
+  textarea::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+  .contact-input {
+    direction: rtl;
+  }
+
+  .contact-input[type="email"],
+  .contact-input[type="tel"] {
+    direction: ltr;
+    text-align: left;
+  }
+</style>
+
+<section id="mission-launch-section" class="relative py-24 lg:py-32 bg-[#020504] ops-grid-bg overflow-hidden border-t border-[#18452B]/20 font-sans" dir="rtl">
+
+  <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#18452B]/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+  <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#D4AF37]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+
+    <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-24 reveal-contact opacity-0 translate-y-12 transition-all duration-[800ms] ease-out">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="w-8 h-[2px] bg-[#D4AF37]/70"></span>
+        <span class="text-[#D4AF37] font-bold text-xs lg:text-sm tracking-[0.2em] uppercase">طلب مهمة تشغيل</span>
+        <span class="w-8 h-[2px] bg-[#D4AF37]/70"></span>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 tracking-wide drop-shadow-md">
+        ابدأ مهمتك معنا
+      </h2>
+
+      <p class="text-gray-400 text-sm md:text-base lg:text-[1.05rem] leading-relaxed opacity-90">
+        أدخل تفاصيل الشحنة أو المهمة التشغيلية، وسيقوم فريقنا بالتواصل معك في أقرب وقت لتنسيق التنفيذ بأعلى درجات الدقة والجاهزية.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+      <!-- Contact Info -->
+      <div class="lg:col-span-4 reveal-contact opacity-0 translate-y-12 lg:translate-y-0 lg:translate-x-16 transition-all duration-[900ms] ease-out delay-[200ms]">
+        <div class="relative bg-[#050B08]/90 backdrop-blur-md border border-[#18452B]/30 rounded-2xl p-8 lg:p-10 shadow-2xl overflow-hidden h-full">
+          <div class="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-[#D4AF37] via-[#D4AF37]/40 to-transparent"></div>
+
+          <h3 class="text-2xl font-bold text-white mb-8">مركز العمليات</h3>
+
+          <ul class="space-y-8">
+            <li class="flex items-start gap-5 group">
+              <div class="w-12 h-12 rounded-full bg-[#0A1711] border border-[#18452B]/60 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#030705] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-[#18452B] text-xs font-bold uppercase mb-1">خط الدعم المباشر</span>
+                <a href="tel:+966138308096" class="text-gray-300 font-medium hover:text-[#D4AF37] transition-colors dir-ltr inline-block text-left">+966 13 830 8096</a>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-5 group">
+              <div class="w-12 h-12 rounded-full bg-[#0A1711] border border-[#18452B]/60 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#030705] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-[#18452B] text-xs font-bold uppercase mb-1">البريد الإلكتروني</span>
+                <a href="mailto:info@alsaadsa.com" class="text-gray-300 font-medium hover:text-[#D4AF37] transition-colors">info@alsaadsa.com</a>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-5 group">
+              <div class="w-12 h-12 rounded-full bg-[#0A1711] border border-[#18452B]/60 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#030705] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-[#18452B] text-xs font-bold uppercase mb-1">المقر الرئيسي</span>
+                <span class="text-gray-300 font-medium">الدمام - المنطقة الشرقية<br>المملكة العربية السعودية</span>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-5 group">
+              <div class="w-12 h-12 rounded-full bg-[#0A1711] border border-[#18452B]/60 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-[#030705] group-hover:border-[#D4AF37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-[#18452B] text-xs font-bold uppercase mb-1">ساعات التشغيل</span>
+                <span class="text-gray-300 font-medium">العمليات الميدانية: 24/7<br>الإدارة: 8 ص - 4 م</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-8 reveal-contact opacity-0 translate-y-12 lg:translate-y-0 lg:-translate-x-16 transition-all duration-[900ms] ease-out delay-[400ms]">
+
+        <form id="contact-form" class="bg-[#050B08]/90 backdrop-blur-md border border-[#18452B]/30 rounded-2xl p-8 lg:p-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)] relative">
+
+          <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#D4AF37]/30 rounded-tr-xl"></div>
+          <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#D4AF37]/30 rounded-bl-xl"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+
+            <div class="relative">
+              <input type="text" id="fullname" name="fullname" placeholder=" " required class="contact-input peer w-full bg-transparent border-b-2 border-[#0F291E] text-white py-3 focus:outline-none focus:border-[#FFF] transition-colors duration-300 placeholder-transparent">
+              <label for="fullname" class="absolute right-0 top-3 text-gray-600 text-sm font-medium transition-all duration-300 cursor-text peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FFF] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FFF]">
+                اسم مسؤول التواصل
+              </label>
+            </div>
+
+            <div class="relative">
+              <input type="text" id="company" name="company" placeholder=" " required class="contact-input peer w-full bg-transparent border-b-2 border-[#0F291E] text-white py-3 focus:outline-none focus:border-[#FFF] transition-colors duration-300 placeholder-transparent">
+              <label for="company" class="absolute right-0 top-3 text-gray-600 text-sm font-medium transition-all duration-300 cursor-text peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FFF] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FFF]">
+                اسم الجهة / الشركة
+              </label>
+            </div>
+
+            <div class="relative">
+              <input type="tel" id="phone" name="phone" placeholder=" " required class="contact-input peer w-full bg-transparent border-b-2 border-[#0F291E] text-white py-3 focus:outline-none focus:border-[#FFF] transition-colors duration-300 placeholder-transparent">
+              <label for="phone" class="absolute right-0 top-3 text-gray-600 text-sm font-medium transition-all duration-300 cursor-text peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FFF] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FFF]">
+                رقم الجوال
+              </label>
+            </div>
+
+            <div class="relative">
+              <input type="email" id="reply_to" name="reply_to" placeholder=" " required class="contact-input peer w-full bg-transparent border-b-2 border-[#0F291E] text-white py-3 focus:outline-none focus:border-[#FFF] transition-colors duration-300 placeholder-transparent">
+              <label for="reply_to" class="absolute right-0 top-3 text-gray-600 text-sm font-medium transition-all duration-300 cursor-text peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FFF] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FFF]">
+                البريد الإلكتروني
+              </label>
+            </div>
+
+            <div class="relative md:col-span-2">
+              <input type="text" id="cargo_type" name="cargo_type" placeholder=" " required class="contact-input peer w-full bg-transparent border-b-2 border-[#0F291E] text-white py-3 focus:outline-none focus:border-[#FFF] transition-colors duration-300 placeholder-transparent">
+              <label for="cargo_type" class="absolute right-0 top-3 text-gray-600 text-sm font-medium transition-all duration-300 cursor-text peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FFF] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FFF]">
+                نوع الحمولة (بترول، معدات ثقيلة، مواد خطرة...)
+              </label>
+            </div>
+
+            <div class="relative">
+              <input type="text" id="origin" name="origin" placeholder=" " required class="contact-input peer w-full bg-transparent border-b-2 border-[#0F291E] text-white py-3 focus:outline-none focus:border-[#FFF] transition-colors duration-300 placeholder-transparent">
+              <label for="origin" class="absolute right-0 top-3 text-gray-600 text-sm font-medium transition-all duration-300 cursor-text peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FFF] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FFF]">
+                موقع الانطلاق
+              </label>
+            </div>
+
+            <div class="relative">
+              <input type="text" id="destination" name="destination" placeholder=" " required class="contact-input peer w-full bg-transparent border-b-2 border-[#0F291E] text-white py-3 focus:outline-none focus:border-[#FFF] transition-colors duration-300 placeholder-transparent">
+              <label for="destination" class="absolute right-0 top-3 text-gray-600 text-sm font-medium transition-all duration-300 cursor-text peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FFF] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FFF]">
+                الوجهة النهائية
+              </label>
+            </div>
+
+            <div class="relative md:col-span-2 mt-4">
+              <textarea id="details" name="details" rows="4" placeholder=" " class="contact-input peer w-full bg-transparent border-b-2 border-[#0F291E] text-white py-3 focus:outline-none focus:border-[#FFF] transition-colors duration-300 placeholder-transparent resize-none"></textarea>
+              <label for="details" class="absolute right-0 top-3 text-gray-600 text-sm font-medium transition-all duration-300 cursor-text peer-focus:-top-4 peer-focus:text-xs peer-focus:text-[#FFF] peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-[#FFF]">
+                تفاصيل إضافية (الوزن، الأبعاد، المتطلبات الخاصة...)
+              </label>
+            </div>
+
+            <input type="hidden" name="site_name" value="شركة سعود سعد الحربي وأبناؤه">
+
+            <div class="md:col-span-2 mt-6">
+              <button id="submit-btn" type="submit" class="w-full md:w-auto px-10 py-4 bg-[#D4AF37] text-[#020504] font-black text-lg rounded-md border-2 border-[#D4AF37] transition-all duration-500 ease-out flex items-center justify-center gap-3 hover:bg-transparent hover:text-[#FFF] hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] group disabled:opacity-60 disabled:cursor-not-allowed">
+                <span id="submit-text">إرسال الرسالة</span>
+                <svg class="w-5 h-5 transform group-hover:-translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+              </button>
+
+              <p id="form-status" class="mt-4 text-sm font-medium opacity-0 translate-y-2 transition-all duration-300"></p>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactElements = document.querySelectorAll('.reveal-contact');
+
+    const contactObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-12', 'lg:translate-x-16', 'lg:-translate-x-16');
+          entry.target.classList.add('opacity-100', 'translate-y-0', 'lg:translate-x-0');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    });
+
+    contactElements.forEach(el => contactObserver.observe(el));
+
+    emailjs.init({
+      publicKey: 'xPDsFHzWzm5wFkhQ7'
+    });
+
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const formStatus = document.getElementById('form-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitText.textContent = 'جاري الإرسال...';
+
+      formStatus.textContent = '';
+      formStatus.className = 'mt-4 text-sm font-medium opacity-0 translate-y-2 transition-all duration-300';
+
+      emailjs.sendForm(
+        'service_sx8jwf1',
+        'template_rff2n9w',
+        form
+      ).then(() => {
+        formStatus.textContent = 'تم إرسال رسالتك بنجاح. سيقوم فريقنا بالتواصل معك قريبًا.';
+        formStatus.classList.add('text-green-400', 'opacity-100', 'translate-y-0');
+
+        form.reset();
+        submitBtn.disabled = false;
+        submitText.textContent = 'إرسال الرسالة';
+      }).catch((error) => {
+        console.error('EmailJS Error:', error);
+
+        formStatus.textContent = 'تعذر إرسال الرسالة حاليًا. تأكد من إعدادات EmailJS ثم حاول مرة أخرى.';
+        formStatus.classList.add('text-red-400', 'opacity-100', 'translate-y-0');
+
+        submitBtn.disabled = false;
+        submitText.textContent = 'إرسال الرسالة';
+      });
+    });
+  });
+</script>
+
+
+<!-- ===== Footer ===== -->
+
+ <style>
+    /* شبكة صناعية خافتة جداً ومدمجة في الظلام المطلق */
+    .footer-grid {
+        background-image: 
+            linear-gradient(rgba(24, 69, 43, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(24, 69, 43, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+</style>
+
+<footer id="operational-seal" class="relative bg-[#020504] footer-grid pt-20 pb-6 overflow-hidden border-t border-[#D4AF37]/15 font-sans" dir="rtl">
+    
+    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#18452B]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
+    <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-[#D4AF37]/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-16">
+            
+            <div class="footer-reveal opacity-0 translate-y-8 transition-all duration-[800ms] ease-out delay-[100ms]">
+                <img src="التحميل.png" 
+                     alt="شعار شركة سعود سعد الحربي" 
+                     class="h-14 lg:h-16 w-auto aspect-[45/16] object-contain mb-6 drop-shadow-lg"
+                     style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+                     
+                <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+                    شريكك اللوجستي الموثوق في قطاع الطاقة والنقل الثقيل. نلتزم بتقديم حلول تشغيلية متكاملة تضمن استمرارية أضخم المشاريع الإنشائية والصناعية بأعلى معايير الأمان والكفاءة.
+                </p>
+                <div class="w-12 h-[2px] bg-[#D4AF37]/50 rounded-full"></div>
+            </div>
+
+            <div class="footer-reveal opacity-0 translate-y-8 transition-all duration-[800ms] ease-out delay-[200ms]">
+                <h3 class="text-white font-bold text-lg mb-6 tracking-wide flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 bg-[#D4AF37] rounded-sm"></span> روابط تشغيلية
+                </h3>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="#" class="inline-flex items-center text-gray-400 hover:text-[#D4AF37] font-medium transition-all duration-300 transform hover:-translate-x-2 group">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2 text-[#D4AF37] text-xs">◀</span>
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about-us" class="inline-flex items-center text-gray-400 hover:text-[#D4AF37] font-medium transition-all duration-300 transform hover:-translate-x-2 group">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2 text-[#D4AF37] text-xs">◀</span>
+                            من نحن
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#operational-journey" class="inline-flex items-center text-gray-400 hover:text-[#D4AF37] font-medium transition-all duration-300 transform hover:-translate-x-2 group">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2 text-[#D4AF37] text-xs">◀</span>
+                            خدماتنا
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projects-map-section" class="inline-flex items-center text-gray-400 hover:text-[#D4AF37] font-medium transition-all duration-300 transform hover:-translate-x-2 group">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2 text-[#D4AF37] text-xs">◀</span>
+                            مشاريعنا
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#mission-launch-section" class="inline-flex items-center text-gray-400 hover:text-[#D4AF37] font-medium transition-all duration-300 transform hover:-translate-x-2 group">
+                            <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2 text-[#D4AF37] text-xs">◀</span>
+                            تواصل معنا
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-reveal opacity-0 translate-y-8 transition-all duration-[800ms] ease-out delay-[300ms]">
+                <h3 class="text-white font-bold text-lg mb-6 tracking-wide flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 bg-[#D4AF37] rounded-sm"></span> غرفة العمليات
+                </h3>
+                <ul class="space-y-5">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-[#D4AF37] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <a href="tel:+966500000000" class="text-gray-400 hover:text-[#D4AF37] transition-colors dir-ltr block text-left">0968 830 13 966+</a>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-[#D4AF37] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="mailto:ops@alharbisons.com" class="text-gray-400 hover:text-[#D4AF37] transition-colors">info@alsaadsa.com</a>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-[#D4AF37] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span class="text-gray-400">الدمام، المنطقة الشرقية<br>المملكة العربية السعودية</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-[#D4AF37] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-gray-400">العمليات: 24/7 | الإدارة: 8ص - 4م</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-reveal opacity-0 translate-y-8 transition-all duration-[800ms] ease-out delay-[400ms] border-t border-[#18452B]/40 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <p class="text-gray-500 text-xs md:text-sm font-medium text-center md:text-right">
+                © 2026 جميع الحقوق محفوظة لشركة سعود سعد الحربي وأبناؤه
+            </p>
+            
+            <div class="text-gray-500 text-xs md:text-sm font-medium flex items-center gap-1">
+                <span>تصميم :</span>
+                <a href="https://tira-dev.github.io/Yamen-Al-Hasan/" class="text-[#18452B] font-bold hover:text-[#D4AF37] hover:shadow-[#D4AF37] transition-colors duration-300 relative group">
+                    يامن الحسن
+                    <span class="absolute -bottom-1 right-0 w-0 h-[1px] bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button id="back-to-top" class="fixed bottom-6 left-6 md:bottom-10 md:left-10 w-12 h-12 bg-[#0A1711] border border-[#18452B] rounded-full flex items-center justify-center text-[#D4AF37] opacity-0 invisible translate-y-4 hover:bg-[#D4AF37] hover:text-[#0A1711] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-500 ease-out z-50 focus:outline-none cursor-pointer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        </svg>
+    </button>
+
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. Fade Animation للفوتر
+        const footerElements = document.querySelectorAll('.footer-reveal');
+
+        const footerObserverOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const footerObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, footerObserverOptions);
+
+        footerElements.forEach(el => {
+            footerObserver.observe(el);
+        });
+
+        // 2. منطق زر العودة للأعلى (Back to Top)
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            // إظهار الزر بعد النزول 500 بكسل
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopBtn.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                backToTopBtn.classList.add('opacity-0', 'invisible', 'translate-y-4');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>
